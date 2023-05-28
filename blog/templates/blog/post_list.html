@@ -5,19 +5,16 @@
     </head>
     <body>
         <header>
-            <h1>Django Girls @PyConIT 2023</h1>
+            <h1><a href="">Django Girls @PyConIT 2023</a></h1>
         </header>
 
-        <article>
-            <h2><a href="">Post 1</a></h2>
-            <time>published: 28.05.2023, 00:00</time>
-            <p>post 1 text</p>
-        </article>
+        {% for post in posts %}
+            <article>
+                <h2>{{ post.title }}</h2>
+                <time>published: {{ post.published_date }}</time>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
 
-        <article>
-            <h2><a href="">Post 2</a></h2>
-            <time>published: 28.05.2023, 00:00</time>
-            <p>post 2 text</p>
-        </article>
     </body>
 </html>
